@@ -31,7 +31,7 @@ def showAll():
 window = Tk()
 window.title("Library Management App")
 window.configure(bg=base, border=5)
-window.geometry("650x420")
+window.geometry("750x420")
 icon = PhotoImage(file='icon.png') # Icon taken from flaticon.com
 window.iconphoto(False, icon)
 
@@ -81,14 +81,20 @@ def addBook():
     b.grid(row=4, column=1)
 
 def rmBook():
-    selection = display.curselection()[0]
+    try:
+        selection = display.curselection()[0]
+    except:
+        return
     name = display.get(selection)
     dash = name.index('-')
     deleteBook(name[1:dash-1])
     display.delete(selection)
 
 def borrow():
-    selection = display.curselection()[0]
+    try:
+        selection = display.curselection()[0]
+    except:
+        return
     name = display.get(selection)
     dash = name.index('-')
     borrowBook(name[1:dash-1], '')
@@ -98,7 +104,10 @@ def borrow():
     display.itemconfig(selection, fg=grey, selectforeground=grey)
 
 def returnB():
-    selection = display.curselection()[0]
+    try:
+        selection = display.curselection()[0]
+    except:
+        return
     name = display.get(selection)
     dash = name.index('-')
     returnBook(name[1:dash-1])
