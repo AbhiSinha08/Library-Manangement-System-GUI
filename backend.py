@@ -1,5 +1,4 @@
 import os, sqlite3
-os.chdir(__file__.replace(os.path.basename(__file__), ''))
 
 sql = sqlite3.connect('library.db')
 db = sql.cursor()

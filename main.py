@@ -2,7 +2,6 @@ import os
 from tkinter import *
 from tkinter import messagebox
 from backend import *
-os.chdir(__file__.replace(os.path.basename(__file__), ''))
 
 #defining colours
 base = "#C1E1C1"
